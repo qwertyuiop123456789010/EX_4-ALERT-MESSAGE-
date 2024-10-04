@@ -1,0 +1,21 @@
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main);
+        findViewById(R.id.loginButton).setOnClickListener(v -> showAlert("Login Successful!")); // Simulating login
+    }
+
+    void showAlert(String message) { new AlertDialog.Builder(this).setMessage(message).setPositiveButton("OK", null).show(); }
+}
+
+
+----------------------------------------------------------------
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
+    <EditText android:id="@+id/username" android:hint="Username" />
+    <EditText android:id="@+id/password" android:hint="Password" android:inputType="textPassword" />
+    <Button android:id="@+id/loginButton" android:text="Login" />
+</LinearLayout>
